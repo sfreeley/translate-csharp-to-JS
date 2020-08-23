@@ -1,6 +1,6 @@
 ﻿using System;
+//<List> class is a part of this namespace 
 using System.Collections.Generic;
-// using System.Linq;
 
 namespace csharp
 {
@@ -8,9 +8,13 @@ namespace csharp
     {
         static void Main(string[] args)
         {
+            //scope-allWishes variable only valid in GetWishList() method
+            //invoking MyWishes method and passing in returned allWishes array
             MyWishes(GetWishList());
         }
 
+        //method which returns the array allWishes
+        //static means can call that method on the class directly
         static List<string> GetWishList()
         {
             List<string> allWishes = new List<string>()
@@ -22,9 +26,11 @@ namespace csharp
                 "A TV that is NOT internet-capable",
                 "The ability to fly, but, like, really fast...not just, like, how fast I can walk, but, like, fast, you know?"
             };
+
             return allWishes;
         }
 
+        //method which takes the allWishes array and iterates through it to display each wish
         static void MyWishes(List<string> allWishes)
         {
             Console.WriteLine("My wishes...");
