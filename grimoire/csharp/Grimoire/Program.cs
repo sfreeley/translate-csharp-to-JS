@@ -20,6 +20,7 @@ namespace Grimoire
             DisplaySpellBook(evilBook);
         }
 
+        //void = does not return anything
         static void DisplaySpellBook(SpellBook book)
         {
             Console.WriteLine(book.Title);
@@ -42,38 +43,48 @@ namespace Grimoire
         {
             SpellBook goodBook = new SpellBook();
             goodBook.Title = "Good Book";
+            //.Where is a method that does a filter like .filter in JS
             goodBook.Spells = allSpells.Where(spell => !spell.IsEvil).ToList();
 
             return goodBook;
         }
 
+        //Lists can only have one data type
+        //Lists have indices ie allSpells[2];
+        //hover over keyword and F12;
         static List<Spell> GetAllSpells()
         {
-            List<Spell> allSpells = new List<Spell>() {
-                new Spell() {
-                    Name = "Turn enemy into a newt",
-                    IsEvil = true,
-                    EnergyReqired = 5.1
+            List<Spell> allSpells = new List<Spell>()
+            {
+                new Spell()
+                {
+                Name = "Turn enemy into a newt",
+                IsEvil = true,
+                EnergyReqired = 5.1
                 },
-                new Spell() {
-                    Name = "Conjure some gold for a local charity",
-                    IsEvil = false,
-                    EnergyReqired = 2.99
+                new Spell()
+                {
+                Name = "Conjure some gold for a local charity",
+                IsEvil = false,
+                EnergyReqired = 2.99
                 },
-                new Spell() {
-                    Name = "Give a deaf person the ability to heal",
-                    IsEvil = false,
-                    EnergyReqired = 12.2
+                new Spell()
+                {
+                Name = "Give a deaf person the ability to heal",
+                IsEvil = false,
+                EnergyReqired = 12.2
                 },
-                new Spell() {
-                    Name = "Make yourself emperor of the universe",
-                    IsEvil = true,
-                    EnergyReqired = 100.0
+                new Spell()
+                {
+                Name = "Make yourself emperor of the universe",
+                IsEvil = true,
+                EnergyReqired = 100.0
                 },
-                new Spell() {
-                    Name = "Convince your relatives your political views are correct",
-                    IsEvil = false,
-                    EnergyReqired = 2921.5
+                new Spell()
+                {
+                Name = "Convince your relatives your political views are correct",
+                IsEvil = false,
+                EnergyReqired = 2921.5
                 }
             };
 

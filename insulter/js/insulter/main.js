@@ -11,6 +11,7 @@ function main() {
 
   // This code ensures we don't end up with duplicate insults
   const indexes = [];
+  //while indexes array length is < 3, get random insults that do not duplicate and push the index number of that insult into the indexes array
   while (indexes.length < 3) {
     const candidate = getRandomInt(0, insults.length - 1);
     if (!indexes.includes(candidate)) {
@@ -18,8 +19,11 @@ function main() {
     }
   }
 
-  for (let i=0; i<indexes.length; i++) {
+  //then loop through the indexes array
+  for (let i = 0; i < indexes.length; i++) {
+    //set value at specific index to the variable index
     const index = indexes[i];
+    //display the insult that pertains to that index number from the insults array
     console.log(insults[index]);
   }
 }
