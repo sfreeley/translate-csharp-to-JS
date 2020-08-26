@@ -18,7 +18,8 @@ namespace csharp
 
             while (indicies.Count < 3)
             {
-                int randomIndex = new Random().Next(0, insultsArray.Count - 1);
+                //randomizer does not include max number;
+                int randomIndex = new Random().Next(0, insultsArray.Count);
                 if (!indicies.Contains(randomIndex))
                 {
                     indicies.Add(randomIndex);
